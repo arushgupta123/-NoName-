@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizX - Cricket Quizzes at the touch of your screen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: purple;
+    }
+      #search_elm {
+          position: relative;
+          margin-top: 65px;
+          height: 60px;
+          width: 800px;
+          left: 50px;
+          margin-bottom: 40px;
+          border-radius: 25px;
+          
+      }
+
+      .quiz {
+        width: 400px;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 15px;
+        border: 1px solid black;
+      }
+
+  
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="index.html"><img src="https://raw.githubusercontent.com/arushgupta123/Live-Editor-for-HTML-CSS-JS-with-JS-/main/quiz%20x%20(1).gif" alt="Sorry! Logo failed to load" height="100px"></a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="quiz_hp.html">QUIZZES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ANALYSES</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/arushgupta123/QuizX/issues/1">REPORT ISSUE</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <center><input type="search" placeholder="There will be many quizzes, use me if you don't want any misses. Type to search here and make sure your computer is fast" id="search_elm" onkeyup="SearchQuizzes()"></center>
+
+      <div id="list">
+          <button class="quiz" onclick="window.open('virat_kohli_quiz.html')">Virat Kohli Quiz</button>
+          <button class="quiz">Chennai Super Kings</button>
+          <button class="quiz">Indian Premier League Quiz</button>
+          <button class="quiz">Indian Cricket Team Quiz</button>
+          <button class="quiz">MS Dhoni Quiz</button>
+      </div>
+
+      <script>
+          // JavaScript code
+function SearchQuizzes() {
+	let input = document.getElementById('search_elm').value
+	input=input.toLowerCase();
+	let x = document.getElementsByClassName('quiz');
+	
+	for (i = 0; i < x.length; i++) {
+		if (!x[i].innerHTML.toLowerCase().includes(input)) {
+			x[i].style.display="none";
+		}
+		else {
+			x[i].style.display="list-item";				
+		}
+	}
+
+  
+}
+
+      </script>
+</body>
+</html>
